@@ -158,7 +158,7 @@ class StructBase(object):
 class CpioFile(StructBase):
     """Class representing an entire cpio file"""
 
-    _members: list[CpioMember] = []
+    _members: list["CpioMember"] = []
 
     def __init__(self):
         self._members = []
@@ -414,21 +414,21 @@ class CpioMember(StructBase):
             ", uid={9}, gid={10}, nlink={11}, rdevmajor={12}"
             ", rdevmino={13}, mtime={14}, filesize={15}>".format(
                 self.__class__.__name__, # 0
-                hex(id(self)), # 1
-                self.coder, # 2
-                self.name, # 3
-                self.magic, # 4
-                self.devmajor, # 5
-                self.devminor, # 6
-                self.ino, # 7
-                self.mode, # 8
-                self.uid, # 9
-                self.gid, # 10
-                self.nlink, # 11
-                self.rdevmajor, # 12
-                self.rdevminor, # 13
-                self.mtime, # 14
-                self.filesize, # 15
+                hex(id(self)),  # 1
+                self.coder,  # 2
+                self.name,  # 3
+                self.magic,  # 4
+                self.devmajor,  # 5
+                self.devminor,  # 6
+                self.ino,  # 7
+                self.mode,  # 8
+                self.uid,  # 9
+                self.gid,  # 10
+                self.nlink,  # 11
+                self.rdevmajor,  # 12
+                self.rdevminor,  # 13
+                self.mtime,  # 14
+                self.filesize,  # 15
             )
         )
 
