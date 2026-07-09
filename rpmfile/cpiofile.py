@@ -239,11 +239,14 @@ class CpioFile(StructBase):
     def unpack_from(self, block, offset=0):
         pointer = offset
         print("unpack_from")
-        while "TRAILER!!!" not in self.names:
+        while pointer < len(block):
             cmem = CpioMember.encoded_class(block, pointer)()
             print(type(cmem))
-            self.members.append(cmem.unpack_from(block, pointer))
+            _member = cmem.unpack_from(block, pointer)
+            self.members.append(_member)
             pointer += cmem.size
+            if _member.name in ("TRAILER!!!", b"TRAILER!!!"):
+                break
 
         del self.members[-1]
 
