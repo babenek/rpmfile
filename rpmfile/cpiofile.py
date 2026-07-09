@@ -413,7 +413,7 @@ class CpioMember(StructBase):
             ", devmajor={5}, devminor={6}, ino={7}, mode={8}"
             ", uid={9}, gid={10}, nlink={11}, rdevmajor={12}"
             ", rdevmino={13}, mtime={14}, filesize={15}>".format(
-                self.__class__.__name__, # 0
+                self.__class__.__name__,  # 0
                 hex(id(self)),  # 1
                 self.coder,  # 2
                 self.name,  # 3
